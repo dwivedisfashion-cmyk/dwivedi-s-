@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dwivedi's Fashion | Wear Your Signature Scent</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#faf7ff;
+color:#222;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(135deg,#7b2cbf,#9d4edd);
+padding:18px 20px;
+position:sticky;
+top:0;
+z-index:999;
+box-shadow:0 4px 20px rgba(0,0,0,0.15);
+}
+
+.header-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.logo{
+color:#ffd166;
+font-size:2rem;
+font-weight:700;
+}
+
+.tagline{
+color:#fff;
+font-size:0.95rem;
+margin-top:5px;
+}
+
+.shop-info{
+color:#fff;
+font-size:0.9rem;
+line-height:1.6;
+text-align:right;
+}
+
+/* HERO */
+
+.hero{
+height:80vh;
+background:url('https://i.ibb.co/LdJLYB5M/Whats-App-Image-2026-05-14-at-2-14-46-PM.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+text-align:center;
+padding:20px;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:700px;
+color:white;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:1.1rem;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.hero-btn{
+display:inline-block;
+padding:14px 28px;
+background:#ffd166;
+color:#222;
+text-decoration:none;
+border-radius:999px;
+font-weight:600;
+transition:0.3s;
+}
+
+.hero-btn:hover{
+transform:translateY(-4px);
+}
+
+/* FILTER */
+
+.filters{
+display:flex;
+justify-content:center;
+gap:15px;
+padding:30px 20px 10px;
+flex-wrap:wrap;
+}
+
+.filter-btn{
+border:none;
+padding:12px 22px;
+background:white;
+color:#7b2cbf;
+font-weight:600;
+border-radius:999px;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+background:#ffd166;
+color:#222;
+transform:translateY(-2px);
+}
+
+/* PRODUCTS */
+
+.products{
+max-width:1200px;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
+
+.product-card{
+background:white;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+display:flex;
+flex-direction:column;
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+}
+
+.product-card img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.product-content{
+padding:18px;
+display:flex;
+flex-direction:column;
+flex:1;
+}
+
+.product-name{
+font-size:1.15rem;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.product-description{
+font-size:0.9rem;
+color:#666;
+line-height:1.7;
+margin-bottom:14px;
+min-height:50px;
+}
+
+.price{
+font-size:1.3rem;
+font-weight:700;
+color:#7b2cbf;
+margin-bottom:15px;
+}
+
+.add-cart{
+margin-top:auto;
+padding:13px;
+border:none;
+border-radius:14px;
+background:linear-gradient(135deg,#ffd166,#f4b400);
+color:#222;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+.add-cart:hover{
+transform:scale(1.03);
+}
+
+/* CART */
+
+.cart-button{
+position:fixed;
+right:20px;
+bottom:95px;
+width:70px;
+height:70px;
+background:#7b2cbf;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.8rem;
+cursor:pointer;
+z-index:1000;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.cart-button:hover{
+transform:scale(1.08);
+}
+
+.cart-count{
+position:absolute;
+top:-4px;
+right:-4px;
+background:#ffd166;
+color:#222;
+width:28px;
+height:28px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:0.85rem;
+font-weight:700;
+}
+
+/* WHATSAPP */
+
+.whatsapp-btn{
+position:fixed;
+right:20px;
+bottom:15px;
+background:#25D366;
+color:white;
+text-decoration:none;
+padding:14px 20px;
+border-radius:999px;
+font-weight:600;
+z-index:1000;
+box-shadow:0 10px 25px rgba(0,0,0,0.18);
+}
+
+/* MODAL */
+
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.6);
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+z-index:2000;
+}
+
+.modal.active{
+display:flex;
+}
+
+.modal-content{
+background:white;
+width:100%;
+max-width:600px;
+border-radius:25px;
+padding:25px;
+max-height:90vh;
+overflow-y:auto;
+animation:popup 0.3s ease;
+}
+
+@keyframes popup{
+from{
+transform:scale(0.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.modal-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.close{
+font-size:2rem;
+cursor:pointer;
+}
+
+.cart-item{
+display:flex;
+gap:14px;
+margin-bottom:18px;
+padding-bottom:18px;
+border-bottom:1px solid #eee;
+}
+
+.cart-item img{
+width:90px;
+height:90px;
+object-fit:cover;
+border-radius:14px;
+}
+
+.item-details{
+flex:1;
+}
+
+.qty-controls{
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:10px;
+}
+
+.qty-controls button{
+width:32px;
+height:32px;
+border:none;
+border-radius:50%;
+background:#7b2cbf;
+color:white;
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+}
+
+.remove-btn{
+margin-top:10px;
+padding:8px 12px;
+border:none;
+background:#ff4d4d;
+color:white;
+border-radius:8px;
+cursor:pointer;
+font-size:0.85rem;
+}
+
+.total{
+font-size:1.5rem;
+font-weight:700;
+margin:20px 0;
+color:#7b2cbf;
+}
+
+.checkout-btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:14px;
+background:linear-gradient(135deg,#ffd166,#f4b400);
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+}
+
+/* FORM */
+
+.checkout-form{
+display:none;
+margin-top:25px;
+}
+
+.checkout-form input,
+.checkout-form textarea{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border-radius:12px;
+border:1px solid #ddd;
+font-size:0.95rem;
+}
+
+.submit-btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:14px;
+background:#7b2cbf;
+color:white;
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+}
+
+.empty{
+text-align:center;
+padding:40px 0;
+color:#777;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:50px;
+padding:30px 20px;
+background:white;
+text-align:center;
+color:#666;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero{
+height:65vh;
+}
+
+.hero h1{
+font-size:2.2rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+.header-container{
+flex-direction:column;
+text-align:center;
+}
+
+.shop-info{
+text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="header-container">
+
+<div>
+<div class="logo">Dwivedi's Fashion</div>
+<div class="tagline">Wear Your Signature Scent</div>
+</div>
+
+<div class="shop-info">
+📍 Kundali, Sonipat, Haryana<br>
+📞 9625580932<br>
+✉️ dwivedisfashion@gmail.com
+</div>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Luxury Perfume Collection</h1>
+
+<p>
+Discover elegant fragrances crafted to define your personality.
+Premium perfumes with long-lasting freshness and signature scents.
+</p>
+
+<a href="#products" class="hero-btn">
+Shop Now
+</a>
+
+</div>
+
+</section>
+
+<!-- FILTERS -->
+
+<div class="filters">
+
+<button class="filter-btn active" data-category="All">
+All Products
+</button>
+
+<button class="filter-btn" data-category="Perfumes">
+Perfumes
+</button>
+
+</div>
+
+<!-- PRODUCTS -->
+
+<section class="products" id="products"></section>
+
+<!-- CART BUTTON -->
+
+<div class="cart-button" id="cartBtn">
+
+🛒
+
+<div class="cart-count" id="cartCount">
+0
+</div>
+
+</div>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/919625580932" target="_blank" class="whatsapp-btn">
+Chat on WhatsApp
+</a>
+
+<!-- MODAL -->
+
+<div class="modal" id="cartModal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h2>Your Cart</h2>
+
+<div class="close" id="closeModal">
+×
+</div>
+
+</div>
+
+<div id="cartItems"></div>
+
+<div class="total" id="grandTotal">
+Total: ₹0
+</div>
+
+<button class="checkout-btn" id="showCheckout">
+Place Order
+</button>
+
+<!-- CHECKOUT FORM -->
+
+<form class="checkout-form" id="checkoutForm">
+
+<input
+type="text"
+id="customerName"
+placeholder="Customer Name"
+required
+>
+
+<input
+type="tel"
+id="customerPhone"
+placeholder="Phone Number"
+required
+>
+
+<textarea
+id="customerAddress"
+rows="3"
+placeholder="Delivery Address"
+required></textarea>
+
+<textarea
+id="customerNotes"
+rows="3"
+placeholder="Special Instructions (Optional)"></textarea>
+
+<!-- HIDDEN ORDER SUMMARY -->
+
+<input type="hidden" id="orderSummary">
+
+<button type="submit" class="submit-btn">
+Confirm Order
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3 style="margin-bottom:10px;color:#7b2cbf;">
+Dwivedi's Fashion
+</h3>
+
+<p>
+Premium Perfume Collection • Easy Online Ordering
+</p>
+
+</footer>
+
+<script>
+
+/* PRODUCTS */
+
+const products = [
+
+{
+id:1,
+name:"Aqua Rush (100 ml)",
+price:500,
+category:"Perfumes",
+image:"https://i.ibb.co/rGC2BRSq/Whats-App-Image-2026-04-13-at-10-12-51-PM.jpg",
+description:"Premium refreshing perfume for everyday elegance."
+},
+
+{
+id:2,
+name:"Midnight Bloom (100 ml)",
+price:500,
+category:"Perfumes",
+image:"https://i.ibb.co/qGCDNvT/Whats-App-Image-2026-04-13-at-10-20-20-PM.jpg",
+description:"Luxury floral fragrance with long-lasting freshness."
+},
+
+{
+id:3,
+name:"Royal Oud",
+price:699,
+category:"Perfumes",
+image:"https://i.ibb.co/rGC2BRSq/Whats-App-Image-2026-04-13-at-10-12-51-PM.jpg",
+description:"Bold oud fragrance with rich premium notes."
+},
+
+{
+id:4,
+name:"Velvet Musk",
+price:650,
+category:"Perfumes",
+image:"https://i.ibb.co/qGCDNvT/Whats-App-Image-2026-04-13-at-10-20-20-PM.jpg",
+description:"Smooth musk perfume for elegant evenings."
+},
+
+{
+id:5,
+name:"Ocean Breeze",
+price:550,
+category:"Perfumes",
+image:"https://i.ibb.co/rGC2BRSq/Whats-App-Image-2026-04-13-at-10-12-51-PM.jpg",
+description:"Fresh aquatic scent with cool refreshing vibes."
+},
+
+{
+id:6,
+name:"Golden Aura",
+price:750,
+category:"Perfumes",
+image:"https://i.ibb.co/qGCDNvT/Whats-App-Image-2026-04-13-at-10-20-20-PM.jpg",
+description:"Luxury signature fragrance for special occasions."
+},
+
+{
+id:7,
+name:"Silver Mist",
+price:580,
+category:"Perfumes",
+image:"https://i.ibb.co/rGC2BRSq/Whats-App-Image-2026-04-13-at-10-12-51-PM.jpg",
+description:"Modern refreshing scent with smooth aroma."
+},
+
+{
+id:8,
+name:"Amber Touch",
+price:720,
+category:"Perfumes",
+image:"https://i.ibb.co/qGCDNvT/Whats-App-Image-2026-04-13-at-10-20-20-PM.jpg",
+description:"Warm amber perfume for bold personalities."
+},
+
+{
+id:9,
+name:"Night Desire",
+price:640,
+category:"Perfumes",
+image:"https://i.ibb.co/rGC2BRSq/Whats-App-Image-2026-04-13-at-10-12-51-PM.jpg",
+description:"Elegant evening fragrance with intense notes."
+},
+
+{
+id:10,
+name:"Fresh Citrus",
+price:480,
+category:"Perfumes",
+image:"https://i.ibb.co/qGCDNvT/Whats-App-Image-2026-04-13-at-10-20-20-PM.jpg",
+description:"Bright citrus blend for energetic freshness."
+}
+
+];
+
+/* ELEMENTS */
+
+const productContainer = document.getElementById("products");
+const cartItems = document.getElementById("cartItems");
+const cartCount = document.getElementById("cartCount");
+const grandTotal = document.getElementById("grandTotal");
+
+let cart = JSON.parse(localStorage.getItem("dwivediCart")) || [];
+
+/* RENDER PRODUCTS */
+
+function renderProducts(category="All"){
+
+productContainer.innerHTML="";
+
+const filteredProducts = category === "All"
+? products
+: products.filter(product => product.category === category);
+
+filteredProducts.forEach(product=>{
+
+productContainer.innerHTML += `
+
+<div class="product-card">
+
+<img
+src="${product.image}"
+alt="${product.name}"
+loading="lazy"
+>
+
+<div class="product-content">
+
+<div class="product-name">
+${product.name}
+</div>
+
+<div class="product-description">
+${product.description}
+</div>
+
+<div class="price">
+₹${product.price}
+</div>
+
+<button
+class="add-cart"
+onclick="addToCart(${product.id})">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+renderProducts();
+
+/* FILTERS */
+
+document.querySelectorAll(".filter-btn").forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+document.querySelectorAll(".filter-btn")
+.forEach(btn=>btn.classList.remove("active"));
+
+button.classList.add("active");
+
+renderProducts(button.dataset.category);
+
+});
+
+});
+
+/* CART FUNCTIONS */
+
+function addToCart(id){
+
+const product = products.find(p => p.id === id);
+
+const existing = cart.find(item => item.id === id);
+
+if(existing){
+
+existing.qty++;
+
+}else{
+
+cart.push({...product, qty:1});
+
+}
+
+saveCart();
+
+animateCart();
+
+}
+
+function saveCart(){
+
+localStorage.setItem("dwivediCart", JSON.stringify(cart));
+
+updateCart();
+
+}
+
+function updateCart(){
+
+cartCount.innerText = cart.reduce((sum,item)=>sum+item.qty,0);
+
+cartItems.innerHTML="";
+
+if(cart.length===0){
+
+cartItems.innerHTML = `
+<div class="empty">
+Your cart is empty
+</div>
+`;
+
+grandTotal.innerText = "Total: ₹0";
+
+return;
+
+}
+
+let total = 0;
+
+cart.forEach(item=>{
+
+const subtotal = item.price * item.qty;
+
+total += subtotal;
+
+cartItems.innerHTML += `
+
+<div class="cart-item">
+
+<img src="${item.image}" alt="${item.name}">
+
+<div class="item-details">
+
+<h4>${item.name}</h4>
+
+<p>₹${item.price}</p>
+
+<div class="qty-controls">
+
+<button onclick="changeQty(${item.id},-1)">
+-
+</button>
+
+<span>${item.qty}</span>
+
+<button onclick="changeQty(${item.id},1)">
++
+</button>
+
+</div>
+
+<p style="margin-top:10px;font-weight:600;">
+Subtotal: ₹${subtotal}
+</p>
+
+<button
+class="remove-btn"
+onclick="removeItem(${item.id})">
+Remove
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+grandTotal.innerText = `Total: ₹${total}`;
+
+}
+
+updateCart();
+
+function changeQty(id, amount){
+
+const item = cart.find(i => i.id === id);
+
+item.qty += amount;
+
+if(item.qty <= 0){
+
+cart = cart.filter(i => i.id !== id);
+
+}
+
+saveCart();
+
+}
+
+function removeItem(id){
+
+cart = cart.filter(i => i.id !== id);
+
+saveCart();
+
+}
+
+/* CART MODAL */
+
+const modal = document.getElementById("cartModal");
+
+document.getElementById("cartBtn").onclick = () => {
+
+modal.classList.add("active");
+
+};
+
+document.getElementById("closeModal").onclick = () => {
+
+modal.classList.remove("active");
+
+};
+
+window.onclick = (e) => {
+
+if(e.target === modal){
+
+modal.classList.remove("active");
+
+}
+
+};
+
+/* CART ANIMATION */
+
+function animateCart(){
+
+const cartBtn = document.getElementById("cartBtn");
+
+cartBtn.style.transform = "scale(1.15)";
+
+setTimeout(()=>{
+
+cartBtn.style.transform = "scale(1)";
+
+},200);
+
+}
+
+/* CHECKOUT FORM */
+
+const showCheckout = document.getElementById("showCheckout");
+const checkoutForm = document.getElementById("checkoutForm");
+
+showCheckout.addEventListener("click",()=>{
+
+if(cart.length===0){
+
+alert("Your cart is empty!");
+
+return;
+
+}
+
+checkoutForm.style.display = "block";
+
+checkoutForm.scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+/* PLACE ORDER */
+
+checkoutForm.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let orderSummary = "🛍️ NEW ORDER - Dwivedi's Fashion\n\n";
+
+let total = 0;
+
+cart.forEach(item=>{
+
+const subtotal = item.price * item.qty;
+
+total += subtotal;
+
+orderSummary += `Product: ${item.name}\n`;
+orderSummary += `Quantity: ${item.qty}\n`;
+orderSummary += `Price: ₹${item.price}\n`;
+orderSummary += `Subtotal: ₹${subtotal}\n\n`;
+
+});
+
+orderSummary += `💰 Grand Total: ₹${total}\n\n`;
+
+orderSummary += `👤 Customer Name: ${document.getElementById("customerName").value}\n`;
+
+orderSummary += `📞 Phone Number: ${document.getElementById("customerPhone").value}\n`;
+
+orderSummary += `🏠 Delivery Address: ${document.getElementById("customerAddress").value}\n`;
+
+orderSummary += `📝 Special Instructions: ${document.getElementById("customerNotes").value || "None"}\n`;
+
+document.getElementById("orderSummary").value = orderSummary;
+
+/* WHATSAPP */
+
+const whatsappURL =
+`https://wa.me/919625580932?text=${encodeURIComponent(orderSummary)}`;
+
+window.open(whatsappURL,'_blank');
+
+/* EMAIL */
+
+window.location.href =
+`mailto:dwivedisfashion@gmail.com?subject=New Order - Dwivedi's Fashion&body=${encodeURIComponent(orderSummary)}`;
+
+/* SUCCESS */
+
+alert(
+"Order placed! Dwivedi's Fashion will contact you on WhatsApp to confirm."
+);
+
+/* CLEAR CART */
+
+cart = [];
+
+saveCart();
+
+checkoutForm.reset();
+
+checkoutForm.style.display = "none";
+
+modal.classList.remove("active");
+
+});
+
+</script>
+
+</body>
+</html>
